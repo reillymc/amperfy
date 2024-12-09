@@ -47,6 +47,10 @@ class SsPlaylistParserDelegate: SsXmlParser {
                     return
             }
             
+            if (attributePlaylistName.hasPrefix("z_")) {
+                return
+            }
+            
             if playlist != nil {
                 playlist?.id = playlistId
             } else if playlistId != "" {
